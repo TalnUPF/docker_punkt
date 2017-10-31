@@ -45,7 +45,7 @@ def punkt():
 
             os.system("cd Proscripter; ./run.sh ../uploads/%s ../uploads/%s ../%s" % (audio_filename, align_filename, PROST_OUT_DIR))
 
-            os.system("cd krisPunctuator/; ./run.sh ../prost_output/%s/%s.pcl ../%s/%s" % (basename, basename, PROST_OUT_DIR, PREDICTION_FILE))
+            os.system("cd krisPunctuator/; ./run.sh ../%s/%s/proscript/%s.pcl ../%s/%s" % (PROST_OUT_DIR, basename, basename, PROST_OUT_DIR, PREDICTION_FILE))
 
             output = open("%s/%s" % (PROST_OUT_DIR, PREDICTION_FILE)).read()            
             return output
